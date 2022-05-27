@@ -17,15 +17,15 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
 	'--input_file',
 	required=True,
-	help='Path to the input CSV file.' \
-		+ 'Each line of the file represents one edge with the three' \
+	help='Path to the input CSV file. ' \
+		+ 'Each line of the file represents one edge with the three ' \
 		+ 'following fields: top_node, bottom_node, edge_type.'
 )
 parser.add_argument(
 	'--output_dir',
 	default=None,
-	help='Path to the directory where the results should be written.' \
-		+ 'If None, then the results are written in the current' \
+	help='Path to the directory where the results should be written. ' \
+		+ 'If None, then the results are written in the current ' \
 		+ 'working directory.'
 )
 parser.add_argument(
@@ -46,9 +46,9 @@ parser.add_argument(
 	'--runs',
 	type=int,
 	default=50,
-	help='Number of runs of the inference procedure to perform for' \
-		+ 'each possible model.' \
-		+ 'Different initial parameters are used for each run, and' \
+	help='Number of runs of the inference procedure to perform for ' \
+		+ 'each possible model. ' \
+		+ 'Different initial parameters are used for each run, and ' \
 		+ 'the best-performing model is returned.'
 )
 parser.add_argument(
@@ -72,15 +72,15 @@ parser.add_argument(
 parser.add_argument(
 	'--backend',
 	default='numpy',
-	help='Backend to use for the computations.' \
+	help='Backend to use for the computations. ' \
 		+ 'Possible values: numpy, torch.'
 )
 parser.add_argument(
 	'--device',
 	nargs='+',
 	default=['cuda'],
-	help='Identifiers of the devices used by PyTorch.' \
-		+ 'If the number of devices is greater than the number of' \
+	help='Identifiers of the devices used by PyTorch. ' \
+		+ 'If the number of devices is greater than the number of ' \
 		+ 'jobs, than only the first n_jobs devices are used.'
 )
 parser.add_argument(
@@ -93,7 +93,7 @@ parser.add_argument(
 	'--seed',
 	type=int,
 	default=None,
-	help='Random seed for the RNG.' \
+	help='Random seed for the RNG. ' \
 		+ 'If None, the seed is not set.'
 )
 args = parser.parse_args()
