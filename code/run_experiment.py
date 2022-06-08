@@ -17,84 +17,93 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
 	'--input_file',
 	required=True,
-	help='Path to the input CSV file. ' \
-		+ 'Each line of the file represents one edge with the three ' \
-		+ 'following fields: top_node, bottom_node, edge_type.'
+	help='Path to the input CSV file. '
+		 'Each line of the file represents one edge with the three '
+		 'following fields: top_node, bottom_node, edge_type.'
 )
 parser.add_argument(
 	'--output_dir',
 	default=None,
-	help='Path to the directory where the results should be written. ' \
-		+ 'If None, then the results are written in the current ' \
-		+ 'working directory.'
+	help='Path to the directory where the results should be written. '
+		 'If None, then the results are written in the current '
+		 'working directory. '
+		 '(default: None)'
 )
 parser.add_argument(
 	'--H',
 	type=int,
 	nargs='+',
 	default=list(range(2, 17)),
-	help='Possible values for the number of top clusters.'
+	help='Possible values for the number of top clusters. '
+		 '(default: [2, ..., 16])'
 )
 parser.add_argument(
 	'--K',
 	type=int,
 	nargs='+',
 	default=list(range(2, 17)),
-	help='Possible values for the number of bottom clusters.'
+	help='Possible values for the number of bottom clusters. '
+		 '(default: [2, ..., 16])'
 )
 parser.add_argument(
 	'--runs',
 	type=int,
 	default=50,
-	help='Number of runs of the inference procedure to perform for ' \
-		+ 'each possible model. ' \
-		+ 'Different initial parameters are used for each run, and ' \
-		+ 'the best-performing model is returned.'
+	help='Number of runs of the inference procedure to perform for '
+		 'each possible model. '
+		 'Different initial parameters are used for each run, and '
+		 'the best-performing model is returned. '
+		 '(default: 50)'
 )
 parser.add_argument(
 	'--epsilon',
 	type=float,
 	default=1e-7,
-	help='Stopping criterion for the inference procedure.'
+	help='Stopping criterion for the inference procedure. '
+		 '(default: 1e-7)'
 )
 parser.add_argument(
 	'--max_iter',
 	type=int,
 	default=2000,
-	help='Maximum number of iterations for the inference procedure.'
+	help='Maximum number of iterations for the inference procedure. '
+		 '(default: 2000)'
 )
 parser.add_argument(
 	'--jobs',
 	type=int,
 	default=1,
-	help='Number of parallel workers for the inference procedure.'
+	help='Number of parallel workers for the inference procedure. '
+		 '(default: 1)'
 )
 parser.add_argument(
 	'--backend',
 	default='numpy',
-	help='Backend to use for the computations. ' \
-		+ 'Possible values: numpy, torch.'
+	help='Backend to use for the computations. '
+		 'Possible values: numpy, torch. '
+		 '(default: "numpy")'
 )
 parser.add_argument(
 	'--device',
 	nargs='+',
 	default=['cuda'],
-	help='Identifiers of the devices used by PyTorch. ' \
-		+ 'If the number of devices is greater than the number of ' \
-		+ 'jobs, than only the first n_jobs devices are used.'
+	help='Identifiers of the devices used by PyTorch. '
+		 'If the number of devices is greater than the number of '
+		 'jobs, than only the first n_jobs devices are used. '
+		 '(default: ["cuda"])'
 )
 parser.add_argument(
 	'--verbose',
 	type=int,
 	default=1,
-	help='Level of verbosity (0, 1 or >1).'
+	help='Level of verbosity (0, 1 or >1). (default: 1)'
 )
 parser.add_argument(
 	'--seed',
 	type=int,
 	default=None,
-	help='Random seed for the RNG. ' \
-		+ 'If None, the seed is not set.'
+	help='Random seed for the RNG. '
+		 'If None, the seed is not set. (default: None)'
 )
 args = parser.parse_args()
 
