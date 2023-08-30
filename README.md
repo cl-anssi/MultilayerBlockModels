@@ -1,5 +1,7 @@
 # Multilayer Block Models for Exploratory Analysis of Computer Event Logs
 
+<img src="img/illustration.png" width="1500px" />
+
 This repository contains the code associated with our paper
 "Multilayer Block Models for Exploratory Analysis of Computer Event
 Logs".
